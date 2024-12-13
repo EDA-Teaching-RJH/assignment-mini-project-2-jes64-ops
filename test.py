@@ -7,7 +7,7 @@ def test_customer():
     assert customer.name == "bob"
     assert customer.email == "jesseofnaof@gmail.com"
 def test_customer_invalid():
-    with pytest.raises(ValueError, match=r"invalid email"):  # match the exact error message
+    with pytest.raises(ValueError, match=r"invalid email"):  # match the exact error message which matches error response
         Customer("bob", "invalid email")
 
 def test_order():
@@ -20,5 +20,5 @@ def test_order():
     assert order.ticket_id == 123
 
 def test_order_invalid():
-    with pytest.raises(ValueError, match=r"invalid artist"):# if addel is not in artist list it will raise a valueerror
+    with pytest.raises(ValueError, match=r"invalid artist"):# if addel is not in artist list it will raise a valueerror which match the error response 
         Order("Jesse Sedzro", "jesseofnaof@gmail.com", 5.50, 10, "addel", 123)
